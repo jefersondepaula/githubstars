@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GitHub Stars</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header>
+    <nav class="navbar fixed-top navbar-dark bg-dark">
+        <div class="container flex-column flex-md-row text-center">
+            <a class="navbar-brand" href="#">Github Ranking</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 p-2 mx-auto">
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="#" onclick="topRepositories()">Repositories</a>
+                </li>
+            </ul>
+            <form class="d-flex" action="api/github.php" method="get">
+                <input class="form-control me-2" id="name" type="search" name="name" placeholder="Search a user" aria-label="Search">
+                <button class="btn btn-outline-light" id="submit" onclick="getUser()" type="button">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="title mt-5">
+        <div class="container d-flex align-items-center justify-content-center">
+            <h1 class="p-4"><span class="most-starred-option">Repositories</span> Starred Ranking</h1>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="result-table">
+        <div class="container">
+            <h2 class="py-3"><span class="most-starred-option">Repositories</span> Table</h2>
+            <div class="row">
+                <div class="col" style="overflow-x:auto;">
+                    <table class="table table-striped table-bordered table-responsive">
+                        <thead>
+                        <tr>
+                            <th scope="col">&#127942;</th>
+                            <th scope="col" id="col-name">Username</th>
+                            <th scope="col">Stars</th>
+                            <th scope="col">Link</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="table-row d-none">
+                            <th scope="row"></th>
+                            <td id="table-username" class="d-flex align-items-center">
+                                <img src="" width="30" height="30" class="img-thumbnail mr-2" alt="">
+                                <p class="p-0 my-0 mx-2"></p>
+                            </td>
+                            <td id="table-stars"></td>
+                            <td id="table-link"><a href="" target="_blank"></a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
